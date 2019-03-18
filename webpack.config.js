@@ -52,7 +52,7 @@ module.exports = {
   output: {
     filename: isProd ? "[name].[chunkhash].js" : "[name].bundle.js",
     path: path.resolve(__dirname, "build/client"),
-    publicPath: "build/client/",
+    // publicPath: "build/client/",
   },
   module: {
     rules: [
@@ -87,7 +87,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3000,
-    publicPath: "http://localhost:3000/build/",
+    publicPath: "http://localhost:3000",
     hotOnly: true,
   },
 };
