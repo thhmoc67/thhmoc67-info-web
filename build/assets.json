@@ -1,0 +1,14 @@
+{
+  "manifest": {
+    "js": "manifest.js"
+  },
+  "main": {
+    "js": "main.js"
+  },
+  "vendors": {
+    "js": "vendors.js"
+  },
+  "": {
+    "html": "index.html"
+  }
+}

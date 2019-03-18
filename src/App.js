@@ -4,6 +4,7 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    console.log('yeah')
     return (
       <div className="App">
         <h1> Hello, World! </h1>
