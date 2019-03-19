@@ -5,20 +5,24 @@ const path = require("path"),
   HtmlWebpackPlugin = require("html-webpack-plugin"),
   UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-const isProd = process.env.NODE_ENV == "production";
-
+const isProd = process.env.NODE_ENV == "production",
+  APP_DIR = path.resolve(__dirname, "../src/index.js"),
+  HTML_TEMPLATE = path.resolve(__dirname, "../public/index.html"),
+  DEV_SERVER_CONTENT_BASE = path.join(__dirname, "../public/"),
+  OUTPUT_PATH = path.resolve(__dirname, "../build/client"),
+  ASSET_PLUGIN_PATH = path.resolve(__dirname, "../build");
 /**
  * Plugins for dev environment
  */
 const devPlugins = [
   new HtmlWebpackPlugin({
-    template: "./public/index.html",
+    template: HTML_TEMPLATE,
     title: "thhmoc67-info-web",
   }),
   new AssetsPlugin({
     prettyPrint: true,
     filename: "assets.json",
-    path: path.resolve(__dirname, "build"),
+    path: ASSET_PLUGIN_PATH,
   }),
   new webpack.DefinePlugin({
     __ENV__: JSON.stringify(process.env.NODE_ENV || "development"),
@@ -48,10 +52,10 @@ const pluginList = isProd ? [...devPlugins, ...prodPlugins] : devPlugins;
 module.exports = {
   // May add cheap-module-source-map to devtool to generate source maps to prod builds
   devtool: isProd ? "" : "inline-source-map",
-  entry: "./src/index.js",
+  entry: APP_DIR,
   output: {
     filename: isProd ? "[name].[chunkhash].js" : "[name].bundle.js",
-    path: path.resolve(__dirname, "build/client"),
+    path: OUTPUT_PATH,
     // publicPath: "build/client/",
   },
   module: {
@@ -85,7 +89,7 @@ module.exports = {
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   devServer: {
-    contentBase: path.join(__dirname, "public/"),
+    contentBase: DEV_SERVER_CONTENT_BASE,
     port: 3000,
     publicPath: "http://localhost:3000",
     hotOnly: true,
