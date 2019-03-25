@@ -9,6 +9,7 @@
     "start:production": "webpack-dev-server --mode production --config config/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p --config config/webpack.config.js",
+    "build:docs": "webpack -p --config config/webpack.github.docs.config.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
