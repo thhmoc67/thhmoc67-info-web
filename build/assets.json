@@ -1,18 +1,18 @@
 {
   "manifest": {
-    "js": "manifest.bundle.js"
+    "js": "/manifest.bundle.js"
   },
   "main": {
-    "js": "main.bundle.js"
+    "js": "/main.bundle.js"
   },
   "vendors": {
-    "js": "vendors.bundle.js"
+    "js": "/vendors.bundle.js"
   },
   "": {
-    "html": "index.html",
+    "html": "/index.html",
     "json": [
-      "03374856919c0bd9819a.hot-update.json",
-      "cf2609b8e6ec034ab3dd.hot-update.json"
+      "/1e1547640345748e6ce0.hot-update.json",
+      "/5539569e1c53066dac8c.hot-update.json"
     ]
   }
 }

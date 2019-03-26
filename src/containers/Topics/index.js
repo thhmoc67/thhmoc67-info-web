@@ -31,10 +31,10 @@ const Topics = ({ match }) => {
   )
 }
 
-Topics.defaultProps = { match: null }
+Topics.defaultProps = { match: {} }
 
 Topics.propTypes = {
-  match: PropTypes.string,
+  match: PropTypes.shape({ root: PropTypes.string }),
 }
 
 export default Topics
