@@ -1,15 +1,17 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Route, Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-function Topic ({ match }) {
-  return <h3>Requested Param: {match.params.id}</h3>
-}
-
-function Topics ({ match }) {
+const Topics = ({ match }) => {
+  const Topic = () => (
+    <h3>
+      Requested Param:
+      {match.params.id}
+    </h3>
+  )
   return (
     <div>
       <h2>Topics</h2>
-
       <ul>
         <li>
           <Link to={`${match.url}/components`}>Components</Link>
@@ -27,6 +29,12 @@ function Topics ({ match }) {
       />
     </div>
   )
+}
+
+Topics.defaultProps = { match: null }
+
+Topics.propTypes = {
+  match: PropTypes.string,
 }
 
 export default Topics

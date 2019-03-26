@@ -1,17 +1,17 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function Header () {
+function Header() {
   return (
     <ul>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to='/about'>About</Link>
+        <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to='/topics'>Topics</Link>
+        <Link to="/topics">Topics</Link>
       </li>
     </ul>
   )
