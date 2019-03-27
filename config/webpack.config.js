@@ -5,6 +5,7 @@ const BrotliPlugin = require('brotli-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const Dotenv = require('dotenv-webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const isProd = process.env.NODE_ENV === 'production'
 const APP_DIR = path.resolve(__dirname, '../src/index.js')
@@ -29,6 +30,7 @@ const devPlugins = [
     __ENV__: JSON.stringify(process.env.NODE_ENV || 'development'),
   }),
   new Dotenv(),
+  new BundleAnalyzerPlugin(),
 ]
 /**
  * Plugins for production environment
