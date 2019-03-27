@@ -10,8 +10,8 @@ const isProd = process.env.NODE_ENV === 'production'
 const APP_DIR = path.resolve(__dirname, '../src/index.js')
 const HTML_TEMPLATE = path.resolve(__dirname, '../public/index.html')
 const DEV_SERVER_CONTENT_BASE = path.join(__dirname, '../public/')
-const OUTPUT_PATH = path.resolve(__dirname, '../build/client')
-const ASSET_PLUGIN_PATH = path.resolve(__dirname, '../build')
+const OUTPUT_PATH = path.resolve(__dirname, '../docs') // ../build/client for production
+const ASSET_PLUGIN_PATH = path.resolve(__dirname, '../docs') // ../build for production
 /**
  * Plugins for dev environment
  */
