@@ -16,7 +16,7 @@ const App = () => {
   return (
     <Router>
       <div className="app">
-        <Header />
+        <Header path={path} />
         <Provider store={HomeStore}>
           <Route exact path={`${path}`} component={Home} />
         </Provider>
