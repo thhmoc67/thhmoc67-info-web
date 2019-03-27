@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import './header.scss'
 
 const Header = ({ path }) => (
-  <ul>
+  <ul className="app">
     <li>
       <Link to={`${path}`}>Home</Link>
     </li>

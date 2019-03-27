@@ -13,6 +13,7 @@ const HTML_TEMPLATE = path.resolve(__dirname, '../public/index.html')
 const DEV_SERVER_CONTENT_BASE = path.join(__dirname, '../public/')
 const OUTPUT_PATH = path.resolve(__dirname, '../docs') // ../build/client for production
 const ASSET_PLUGIN_PATH = path.resolve(__dirname, '../docs') // ../build for production
+const PATH_SRC = path.resolve(__dirname, '../src')
 /**
  * Plugins for dev environment
  */
@@ -69,10 +70,27 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: { presets: ['@babel/env'] },
+        include: [PATH_SRC],
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        // look for .css or .scss files
+        test: /\.(css|scss)$/,
+        // in the `src` directory
+        include: [PATH_SRC],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
     ],
   },
