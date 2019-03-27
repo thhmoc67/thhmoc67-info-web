@@ -7,14 +7,16 @@ import Header from './Header'
 import Topics from './Topics'
 import HomeStore from './store'
 import './App.css'
+import envConfig from '../../config/envConfig'
+
 
 const App = () => {
-  const path = window.location.pathname
-  console.log(path)
+  const path = envConfig(process.env.NODE_ENV).publicPath
+  console.log('process', process.env.NODE_ENV, path)
   return (
     <Router>
       <div className="app">
-        <Header path={path} />
+        <Header />
         <Provider store={HomeStore}>
           <Route exact path={`${path}`} component={Home} />
         </Provider>
