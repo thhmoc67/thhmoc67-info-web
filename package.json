@@ -19,7 +19,14 @@
     "url": "git+https://github.com/thhmoc67/thhmoc67-info-web.git"
   },
   "keywords": [
-    "reactJs"
+    "reactJs",
+    "babel",
+    "redux",
+    "eslint",
+    "webpack",
+    "gh-pages",
+    "scss",
+    ".env"
   ],
   "author": "@thhmoc67",
   "license": "ISC",
