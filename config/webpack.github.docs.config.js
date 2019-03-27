@@ -91,7 +91,8 @@ module.exports = {
   devServer: {
     contentBase: DEV_SERVER_CONTENT_BASE,
     port: 3000,
-    publicPath: 'http://localhost:3000',
+    publicPath: 'http://localhost:3001',
     hotOnly: true,
+    historyApiFallback: true,
   },
 };
