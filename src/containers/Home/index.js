@@ -10,9 +10,11 @@ const Home = ({ handleAdd }) => (
   </div>
 )
 
+// ---------------props-------------------
 Home.propTypes = {
   handleAdd: PropTypes.func.isRequired,
 }
+// ---------------------------------------
 
 const mapState = state => state
 const mapsDispatch = dispatch => ({

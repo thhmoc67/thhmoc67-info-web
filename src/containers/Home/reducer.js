@@ -9,7 +9,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_VALUE:
-      console.log(state)
       return { ...state, published: true }
     default:
       return state
