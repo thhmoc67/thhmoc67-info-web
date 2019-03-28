@@ -1,54 +1,18 @@
 const path = require('path')
-const webpack = require('webpack')
-const AssetsPlugin = require('assets-webpack-plugin')
-const BrotliPlugin = require('brotli-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const Dotenv = require('dotenv-webpack');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const isProd = process.env.NODE_ENV === 'production'
-const APP_DIR = path.resolve(__dirname, '../src/index.js')
-const HTML_TEMPLATE = path.resolve(__dirname, '../public/index.html')
-const DEV_SERVER_CONTENT_BASE = path.join(__dirname, '../public/')
-const OUTPUT_PATH = path.resolve(__dirname, '../docs') // ../build/client for production
-const ASSET_PLUGIN_PATH = path.resolve(__dirname, '../docs') // ../build for production
-const PATH_SRC = path.resolve(__dirname, '../src')
-/**
- * Plugins for dev environment
- */
-const devPlugins = [
-  new HtmlWebpackPlugin({
-    template: HTML_TEMPLATE,
-    title: 'thhmoc67-info-web',
-  }),
-  new AssetsPlugin({
-    prettyPrint: true,
-    filename: 'assets.json',
-    path: ASSET_PLUGIN_PATH,
-  }),
-  new webpack.DefinePlugin({
-    __ENV__: JSON.stringify(process.env.NODE_ENV || 'development'),
-  }),
-  new Dotenv(),
-  new BundleAnalyzerPlugin(),
-]
-/**
- * Plugins for production environment
- */
-const prodPlugins = [
-  new BrotliPlugin({
-    asset: '[path].br[query]',
-    test: /\.(js|css|html|svg)$/,
-    threshold: 10240,
-    minRatio: 0.8,
-  }),
-  new UglifyJsPlugin({
-    cache: true,
-    parallel: true,
-    sourceMap: true,
-  }),
-]
+const projectDir = path.resolve(__dirname, '../')
+
+const APP_DIR = path.resolve(projectDir, './src/index.js')
+const DEV_SERVER_CONTENT_BASE = path.join(projectDir, './public/')
+const DOCS_PATH = path.resolve(projectDir, './docs')
+const BUILD_PATH = path.resolve(projectDir, './build/client')
+const OUTPUT_PATH = process.env.BUILD_ENV === 'github' ? DOCS_PATH : BUILD_PATH
+const PATH_SRC = path.resolve(projectDir, './src')
+const { devPlugins } = require('./devPlugins')
+const { prodPlugins } = require('./prodPlugins')
+
+
 /**
  * Merging plugins on the basis of env
  */
