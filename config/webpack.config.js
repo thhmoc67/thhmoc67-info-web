@@ -1,13 +1,14 @@
 const path = require('path')
 
 const isProd = process.env.NODE_ENV === 'production'
+const isGithub = process.env.BUILD_ENV === 'github'
 const projectDir = path.resolve(__dirname, '../')
 
 const APP_DIR = path.resolve(projectDir, './src/index.js')
 const DEV_SERVER_CONTENT_BASE = path.join(projectDir, './public/')
 const DOCS_PATH = path.resolve(projectDir, './docs')
 const BUILD_PATH = path.resolve(projectDir, './build/client')
-const OUTPUT_PATH = process.env.BUILD_ENV === 'github' ? DOCS_PATH : BUILD_PATH
+const OUTPUT_PATH = isGithub ? DOCS_PATH : BUILD_PATH
 const PATH_SRC = path.resolve(projectDir, './src')
 const { devPlugins } = require('./devPlugins')
 const { prodPlugins } = require('./prodPlugins')
@@ -25,7 +26,7 @@ module.exports = {
   output: {
     filename: isProd ? '[name].[chunkhash].js' : '[name].bundle.js',
     path: OUTPUT_PATH,
-    publicPath: '/',
+    publicPath: isGithub ? '' : '/',
   },
   module: {
     rules: [
