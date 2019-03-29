@@ -3,9 +3,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 /* eslint-enable */
-import Button from '../src/components/Button'
+import Card from '../src/components/Card'
 
-storiesOf('Button', module)
-  .add('Animation', () => (
-    <Button onClick={action('clicked')} title="Button" />
+storiesOf('Card', module)
+  .add('Normal', () => (
+    <Card onClick={action('clicked')} title="Button" />
   ))

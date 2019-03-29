@@ -9,6 +9,10 @@
     "js": "/vendors.bundle.js"
   },
   "": {
-    "html": "/index.html"
+    "html": "/index.html",
+    "json": [
+      "/c331aca2628e3160f860.hot-update.json",
+      "/f44eea3f538df74239c8.hot-update.json"
+    ]
   }
 }

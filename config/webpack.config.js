@@ -1,4 +1,5 @@
 const path = require('path')
+const { getAlias } = require('./alias')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isGithub = process.env.BUILD_ENV === 'github'
@@ -74,7 +75,7 @@ module.exports = {
       name: 'manifest',
     },
   },
-  resolve: { extensions: ['*', '.js', '.jsx'] },
+  resolve: { extensions: ['*', '.js', '.jsx'], alias: getAlias(PATH_SRC) },
   devServer: {
     contentBase: DEV_SERVER_CONTENT_BASE,
     port: 3000,
