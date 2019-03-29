@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom'
 import './header.scss'
 
 const Header = ({ path }) => (
-  <ul className="app">
-    <li>
+  <div className='headerMain'>
+    <div>
       <Link to={`${path}`}>Home</Link>
-    </li>
-    <li>
+    </div>
+    <div>
       <Link to={`${path}about`}>About</Link>
-    </li>
-    <li>
+    </div>
+    <div>
       <Link to={`${path}topics`}>Topics</Link>
-    </li>
-  </ul>
+    </div>
+  </div>
 )
 
 Header.propTypes = {
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
 }
 
 export default Header

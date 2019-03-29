@@ -2,16 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { add } from './actions'
+import Button from '../../components/Button'
 
-const Home = ({ handleAdd }) => (
+const HomeContainer = ({ handleAdd }) => (
   <div>
     <h1>hello home</h1>
-    <button value="show" type="button" onClick={handleAdd}>sdas</button>
+    <Button value="show" type="button" onClick={handleAdd} title="button" />
   </div>
 )
 
 // ---------------props-------------------
-Home.propTypes = {
+HomeContainer.propTypes = {
   handleAdd: PropTypes.func.isRequired,
 }
 // ---------------------------------------
@@ -22,6 +23,6 @@ const mapsDispatch = dispatch => ({
     dispatch(add())
   },
 })
-const vHome = connect(mapState, mapsDispatch)(Home)
+const Home = connect(mapState, mapsDispatch)(HomeContainer)
 
-export default vHome
+export default Home

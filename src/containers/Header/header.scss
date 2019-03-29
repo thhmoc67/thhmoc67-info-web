@@ -2,6 +2,17 @@
 $color-sassy: #cc4397;
 $color-blue: #0059ff;
 
-.app {
+.headerMain {
   color: $color-blue;
+  height: 100%;
+  width: 100px;
+  background-color: lightgray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  align-content: center;
+  margin-top: 50;
+  margin: auto;
+  display: inline-grid;
 }
