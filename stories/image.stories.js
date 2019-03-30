@@ -2,11 +2,11 @@ import React from 'react'
 /* eslint-disable */
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import profile from '_jpeg/profile.jpg'
+import Image from '_components/Image'
 /* eslint-enable */
-import facebook from '_svg/socialLogo/facebook.svg'
-import Image from '../src/components/Image'
 
 storiesOf('Image', module)
   .add('circle', () => (
-    <Image src={facebook} alt="image" />
+    <Image src={profile} alt="image" circle />
   ))

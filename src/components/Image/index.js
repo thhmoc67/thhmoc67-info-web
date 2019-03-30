@@ -1,13 +1,19 @@
 import React from 'react'
-import PropsTypes from '../../utils/propTypes'
+import PropTypes from 'prop-types'
+import './Image.scss'
 
-const Image = ({ src, alt }) => (
-  <img className="Image" src={src} alt={alt} />
+const Image = ({ src, alt, circle }) => (
+  <img className={`Image ${circle ? 'circle' : ''}`} src={src} alt={alt} />
 )
 
+Image.defaultProps = {
+  circle: false,
+}
+
 Image.propTypes = {
-  src: PropsTypes.string.isRequired,
-  alt: PropsTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  circle: PropTypes.bool,
 }
 
 export default Image

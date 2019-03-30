@@ -15,29 +15,52 @@ module.exports = {
   plugins: [
     // your custom plugins
   ],
-  resolve: { extensions: ['*', '.js', '.jsx'], alias: getAlias(PATH_SRC) },
   module: {
     rules: [
       {
-        test: /\.scss$|\.css$/,
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: { presets: ['@babel/env'] },
+        include: [PATH_SRC],
+      },
+      {
+        // look for .css or .scss files
+        test: /\.(css|scss)$/,
+        // in the `src` directory
+        include: [PATH_SRC],
         use: [
           {
-            loader: 'style-loader' // creates style nodes from JS strings
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true
-            } // translates CSS into CommonJS
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            } // compiles Sass to CSS
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name]-[hash].[ext]',
+              emitFile: true
+            }
           }
         ]
-      }
-    ]
-  }
+      },
+    ],
+  },
+  resolve: {
+    modules: ['src', 'node_modules'],
+    extensions: ['*', '.js', '.jsx'],
+    alias: getAlias(PATH_SRC),
+  },
 }

@@ -1,10 +1,11 @@
 module.exports.getAlias = function getAlias(dir) {
   return {
     scss: `${dir}/scss`,
-    _helpers: `${dir}/helpers`,
     _svg: `${dir}/assets/images/svg`,
+    _jpeg: `${dir}/assets/images/jpeg`,
     _utils: `${dir}/utils`,
-    _configs: `${dir}/configs`,
+    _components: `${dir}/components`,
+    _container: `${dir}/containers`,
     _assets: `${dir}/assets`,
   }
 }

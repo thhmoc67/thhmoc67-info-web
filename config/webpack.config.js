@@ -26,7 +26,7 @@ module.exports = {
   output: {
     filename: isProd ? '[name].[chunkhash].js' : '[name].bundle.js',
     path: OUTPUT_PATH,
-    publicPath: isGithub ? '' : '/'
+    publicPath: isGithub ? '' : '/',
   },
   module: {
     rules: [
@@ -35,7 +35,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: { presets: ['@babel/env'] },
-        include: [PATH_SRC]
+        include: [PATH_SRC],
       },
       {
         // look for .css or .scss files
@@ -44,31 +44,32 @@ module.exports = {
         include: [PATH_SRC],
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
-        test: /\.(jpg|svg)$/,
+        test: /\.(png|jpg|gif|svg|ico)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]?[hash]'
-            }
-          }
-        ]
-      }
-    ]
+              name: '[path][name]-[hash].[ext]',
+              emitFile: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   optimization: {
     splitChunks: {
@@ -76,18 +77,18 @@ module.exports = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all'
-        }
-      }
+          chunks: 'all',
+        },
+      },
     },
     runtimeChunk: {
-      name: 'manifest'
-    }
+      name: 'manifest',
+    },
   },
   resolve: {
     modules: ['src', 'node_modules'],
     extensions: ['*', '.js', '.jsx'],
-    alias: getAlias(PATH_SRC)
+    alias: getAlias(PATH_SRC),
   },
   plugins: pluginList,
   devServer: {
@@ -95,6 +96,6 @@ module.exports = {
     port: 3000,
     publicPath: 'http://localhost:3001',
     hotOnly: true,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 }
