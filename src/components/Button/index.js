@@ -1,6 +1,5 @@
 import React from 'react'
 import Proptypes from 'prop-types'
-import facebook from '_svg/facebook.svg'
 import './button.scss'
 
 const Button = ({ children }) => (

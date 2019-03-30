@@ -9,6 +9,11 @@
     "js": "/vendors.bundle.js"
   },
   "": {
-    "html": "/index.html"
+    "html": "/index.html",
+    "svg": "/src/assets/images/svg/facebook.svg?06468580303d77d9afd2801a2ca80086",
+    "json": [
+      "/d75f7c025600fc311fc1.hot-update.json",
+      "/dc5a6e520233ea97adf4.hot-update.json"
+    ]
   }
 }
