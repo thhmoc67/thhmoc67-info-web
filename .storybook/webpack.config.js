@@ -6,10 +6,16 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 
+const path = require('path')
+const { getAlias } = require('../config/alias')
+const PATH_SRC = path.resolve(__dirname, '../src')
+
+
 module.exports = {
   plugins: [
     // your custom plugins
   ],
+  resolve: { extensions: ['*', '.js', '.jsx'], alias: getAlias(PATH_SRC) },
   module: {
     rules: [
       {
@@ -32,6 +38,6 @@ module.exports = {
           }
         ]
       }
-    ],
-  },
-};
+    ]
+  }
+}

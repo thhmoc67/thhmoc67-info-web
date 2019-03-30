@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './header.scss'
 
 const Header = ({ path }) => (
-  <div className='headerMain'>
+  <div className="headerMain">
     <div>
       <Link to={`${path}`}>Home</Link>
     </div>
@@ -18,7 +18,7 @@ const Header = ({ path }) => (
 )
 
 Header.propTypes = {
-  path: PropTypes.string.isRequired
+  path: PropTypes.string.isRequired,
 }
 
 export default Header

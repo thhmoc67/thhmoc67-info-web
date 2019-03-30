@@ -7,7 +7,7 @@ import Button from '../../components/Button'
 const HomeContainer = ({ handleAdd }) => (
   <div>
     <h1>hello home</h1>
-    <Button value="show" type="button" onClick={handleAdd} title="button" />
+    <Button value="show" type="button" onClick={handleAdd} title="button">Submit</Button>
   </div>
 )
 

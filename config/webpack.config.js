@@ -13,8 +13,7 @@ const OUTPUT_PATH = isGithub ? DOCS_PATH : BUILD_PATH
 const PATH_SRC = path.resolve(projectDir, './src')
 const { devPlugins } = require('./devPlugins')
 const { prodPlugins } = require('./prodPlugins')
-
-
+console.log(getAlias(PATH_SRC))
 /**
  * Merging plugins on the basis of env
  */
@@ -60,7 +59,6 @@ module.exports = {
       },
     ],
   },
-  plugins: pluginList,
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -75,7 +73,12 @@ module.exports = {
       name: 'manifest',
     },
   },
-  resolve: { extensions: ['*', '.js', '.jsx'], alias: getAlias(PATH_SRC) },
+  resolve: {
+    modules: [path.resolve(__dirname, './src'), 'node_modules'],
+    extensions: ['*', '.js', '.jsx'],
+    alias: getAlias(PATH_SRC),
+  },
+  plugins: pluginList,
   devServer: {
     contentBase: DEV_SERVER_CONTENT_BASE,
     port: 3000,

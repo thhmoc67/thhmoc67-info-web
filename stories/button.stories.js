@@ -7,5 +7,5 @@ import Button from '../src/components/Button'
 
 storiesOf('Button', module)
   .add('Animation', () => (
-    <Button onClick={action('clicked')} title="Button" />
+    <Button onClick={action('clicked')}>BUtton</Button>
   ))
