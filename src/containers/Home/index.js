@@ -60,7 +60,7 @@ const HomeContainer = ({ handleAdd }) => (
         {'Codes </>'}
       </Button>
       <Button value="show" type="button" onClick={handleAdd} title="button">
-        {'Photograpgy 📷'}
+        {'Photography 📷'}
       </Button>
     </div>
   </div>
