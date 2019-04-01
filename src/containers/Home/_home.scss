@@ -3,8 +3,63 @@
   color: $white;
   background: $secondary;
   margin: -22px 0px 0 -8px;
-  padding: 32px;
+  padding: 8px;
   height: 100%;
-  position: absolute;
+  // position: absolute;
   width: 100%;
+
+  .social {
+    display: inline-block;
+    z-index: 9;
+    margin-top: 26px;
+    vertical-align: top;
+    .socialLine {
+      padding: 5px;
+      img {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+      .line {
+        width: 100px;
+        position: absolute;
+        border-bottom: 2px solid $primary;
+        margin-top: -10px;
+        margin-left: 30px;
+      }
+    }
+
+    .line-1 {
+      margin-left: 40px;
+    }
+    .line-2 {
+      margin-left: 20px;
+    }
+    .line-3 {
+      margin-left: 10px;
+    }
+    .line-4 {
+      margin-left: 20px;
+    }
+    .line-5 {
+      margin-left: 40px;
+    }
+  }
+
+  .profile {
+    display: inline-block;
+    z-index: 10;
+    margin-left: 74px;
+
+    .Image {
+      width: 200px;
+      padding: 0;
+      border: 2px solid $primary;
+    }
+  }
+
+  .profileContainer {
+    text-align: right;
+    padding: 32px;
+  }
 }

@@ -11,10 +11,17 @@
   "": {
     "html": "/index.html",
     "jpg": "/src/assets/images/jpeg/profile-4b8440c40d927ebc45abdf0f09581dd8.jpg",
-    "svg": "/src/assets/images/svg/webHouse-47f64ffda5e718f5d97f5ebc08ea0925.svg",
+    "svg": [
+      "/src/assets/images/svg/behance-45a9a05e2e04009b7f9342d9c35d611f.svg",
+      "/src/assets/images/svg/facebook-81f1baa368addabbbd32943cb617565b.svg",
+      "/src/assets/images/svg/github-a02709bc42fb66aaf8e44e290c722789.svg",
+      "/src/assets/images/svg/linkedin-df987edbf3ccb016334780f661e43eae.svg",
+      "/src/assets/images/svg/twitter-8cc8fc3c99be60739f54804f2848a5c9.svg",
+      "/src/assets/images/svg/webHouse-47f64ffda5e718f5d97f5ebc08ea0925.svg"
+    ],
     "json": [
-      "/a1dab96513188846cb9d.hot-update.json",
-      "/ee1bccd38557155087f3.hot-update.json"
+      "/295acfb158eb985f4247.hot-update.json",
+      "/c2e2abf40ee3348b86d8.hot-update.json"
     ]
   }
 }
