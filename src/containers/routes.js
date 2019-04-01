@@ -6,7 +6,7 @@ import Home from './Home'
 import Header from './Header'
 import Topics from './Topics'
 import HomeStore from './store'
-import './App.scss'
+import './_app.scss'
 import envConfig from '../../config/envConfig'
 
 const App = () => {

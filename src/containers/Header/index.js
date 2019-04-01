@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import './header.scss'
+import homeIcon from '_assets/images/svg/webHouse.svg'
+import './_header.scss'
 
 const Header = ({ path }) => (
   <div className="headerMain">
-    <div>
-      <Link to={`${path}`}>Home</Link>
+    <div className="homeLink">
+      <Link to={`${path}`}>
+        <img src={homeIcon} alt="home icon" />
+      </Link>
     </div>
-    <div>
+    <div className="abloutLink">
       <Link to={`${path}about`}>About</Link>
     </div>
     <div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from '_components/Button'
 import './card.scss'
 
 const CardContainer = ({ title, subTitle }) => (
@@ -7,8 +8,8 @@ const CardContainer = ({ title, subTitle }) => (
     <div className="title">{title}</div>
     <div className="subTitle">{subTitle}</div>
     <div className="buttons">
-      <div className="webButton">web</div>
-      <div className="codeButton">code</div>
+      <Button>Live</Button>
+      <Button>Code</Button>
     </div>
   </div>
 )

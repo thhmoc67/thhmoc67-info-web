@@ -1,5 +1,7 @@
 .cardContainer {
   width: 100%;
+  padding: 10px;
+    border: 1px solid lightgray;
   .title {
       font-size: 14px;
   }
@@ -8,8 +10,12 @@
   }
   .buttons {
     .webButton {
+      display: inline-block;
+      margin-left: 10px;
     }
     .codeButton {
+      display: inline-block;
+      margin-left: 10px;
     }
   }
 }

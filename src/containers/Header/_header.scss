@@ -1,3 +1,4 @@
+@import "~scss/globals";
 // Define a color variable
 $color-sassy: #cc4397;
 $color-blue: #0059ff;
@@ -5,8 +6,8 @@ $color-blue: #0059ff;
 .headerMain {
   color: $color-blue;
   height: 100%;
-  width: 100px;
-  background-color: lightgray;
+  width: 90px;
+  background-color: $primary;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,4 +16,11 @@ $color-blue: #0059ff;
   margin-top: 50;
   margin: auto;
   display: inline-grid;
+
+  .homeLink {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }

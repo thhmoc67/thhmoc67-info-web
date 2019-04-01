@@ -10,10 +10,11 @@
   },
   "": {
     "html": "/index.html",
-    "svg": "/src/assets/images/svg/facebook.svg?06468580303d77d9afd2801a2ca80086",
+    "jpg": "/src/assets/images/jpeg/profile-4b8440c40d927ebc45abdf0f09581dd8.jpg",
+    "svg": "/src/assets/images/svg/webHouse-47f64ffda5e718f5d97f5ebc08ea0925.svg",
     "json": [
-      "/d75f7c025600fc311fc1.hot-update.json",
-      "/dc5a6e520233ea97adf4.hot-update.json"
+      "/a1dab96513188846cb9d.hot-update.json",
+      "/ee1bccd38557155087f3.hot-update.json"
     ]
   }
 }
