@@ -10,7 +10,7 @@
   },
   "": {
     "html": "/index.html",
-    "jpg": "/src/assets/images/jpeg/profile-4b8440c40d927ebc45abdf0f09581dd8.jpg",
+    "jpg": "/src/assets/images/jpeg/profile-7fba66b62f349db02f28d3adec965b34.jpg",
     "svg": [
       "/src/assets/images/svg/behance-45a9a05e2e04009b7f9342d9c35d611f.svg",
       "/src/assets/images/svg/facebook-81f1baa368addabbbd32943cb617565b.svg",
@@ -20,8 +20,8 @@
       "/src/assets/images/svg/webHouse-47f64ffda5e718f5d97f5ebc08ea0925.svg"
     ],
     "json": [
-      "/311edc8a4be78a9643a7.hot-update.json",
-      "/c8c719f64b9b660cb88e.hot-update.json"
+      "/6fdac74a8eb863e25f56.hot-update.json",
+      "/ab4c991ff7fb6ad4e919.hot-update.json"
     ]
   }
 }

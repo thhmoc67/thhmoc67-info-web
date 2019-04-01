@@ -40,6 +40,8 @@ const HomeContainer = ({ handleAdd }) => (
       </div>
 
       <div className="profile">
+        <input type="color" value="#00fa79" />
+
         <Image circle src={profileImg} alt="thhmoc67" />
       </div>
     </div>
