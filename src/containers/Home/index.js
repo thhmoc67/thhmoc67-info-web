@@ -14,6 +14,7 @@ import './_home.scss'
 
 const HomeContainer = ({ handleAdd }) => (
   <div className="Home">
+    <div className="logo">@thhmoc67</div>
     <div className="profileContainer">
       <div className="social">
         <div className="socialLine line-1">
@@ -42,8 +43,26 @@ const HomeContainer = ({ handleAdd }) => (
         <Image circle src={profileImg} alt="thhmoc67" />
       </div>
     </div>
-    <h1>hello home</h1>
-    <Button value="show" type="button" onClick={handleAdd} title="button">Submit</Button>
+    <div className="whoAmI">
+      <h1>Dayal Sharan Saini</h1>
+      {/* <h4>{'{ @thhmoc67 }'}</h4> */}
+      <div>
+        <div>You can call me</div>
+        <span>
+          {`Developer 💻| Designer | Photographer 📷 | Traveller 🗻 | De
+          saini 🤓| Kalyug's Saint 🌚`}
+        </span>
+      </div>
+      <Button value="show" type="button" onClick={handleAdd} title="button">
+        {'Writings ✍'}
+      </Button>
+      <Button value="show" type="button" onClick={handleAdd} title="button">
+        {'Codes </>'}
+      </Button>
+      <Button value="show" type="button" onClick={handleAdd} title="button">
+        {'Photograpgy 📷'}
+      </Button>
+    </div>
   </div>
 )
 
@@ -59,6 +78,9 @@ const mapsDispatch = dispatch => ({
     dispatch(add())
   },
 })
-const Home = connect(mapState, mapsDispatch)(HomeContainer)
+const Home = connect(
+  mapState,
+  mapsDispatch,
+)(HomeContainer)
 
 export default Home
